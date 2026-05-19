@@ -1,0 +1,20 @@
+.messages-container {
+	width: 500px;
+	height: 700px;
+	overflow: auto;
+}
+
+.message {
+	width: 300px;
+	text-align: center;
+	display: inline-block;
+	border: 1px solid black;
+	border-radius: 15px;
+	padding: 20px;
+	background-color: lightblue;
+}
+
+.user {
+	float: right;
+	background-color: white;
+}

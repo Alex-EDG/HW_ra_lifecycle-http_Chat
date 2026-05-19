@@ -1,0 +1,28 @@
+{
+  "name": "hw-ra-lifecycle-http-chat-backend",
+  "description": "Домашнее задание к занятию «Жизненный цикл и работа с HTTP» - Chat Backend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Alex-EDG/HW_ra_lifecycle-http_chat_Backend.git"
+  },
+  "author": "Alexey Neronov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-EDG/HW_ra_lifecycle-http_chat_Backend/issues"
+  },
+  "homepage": "https://github.com/Alex-EDG/HW_ra_lifecycle-http_chat_Backend#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}

@@ -1,0 +1,18 @@
+.input-message {
+	position: relative;
+}
+
+.input-message-input {
+	height: 50px;
+	width: 500px;
+}
+
+.input-message-send {
+	cursor: pointer;
+	top: 18px;
+	right: 3px;
+	position: absolute;
+	border: none;
+	background-color: transparent;
+	color: greenyellow;
+}

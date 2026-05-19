@@ -1,0 +1,41 @@
+{
+  "name": "hw-ra-lifecycle-http-chat",
+  "description": "Домашнее задание к занятию «Жизненный цикл и работа с HTTP» - Chat (Frontend)",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Alex-EDG/HW_ra_lifecycle-http_Chat.git"
+  },
+  "author": "Alexey Neronov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Alex-EDG/HW_ra_lifecycle-http_Chat/issues"
+  },
+  "homepage": "https://github.com/Alex-EDG/HW_ra_lifecycle-http_Chat#readme",
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.5.0",
+    "prop-types": "^15.8.1",
+    "vite": "^8.0.12",
+    "web-vitals": "^5.2.0"
+  }
+}
