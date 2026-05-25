@@ -35,20 +35,7 @@ export default function Chat() {
         localStorage.setItem('userId', userId);
       }})();
 
-    // fetch(hostURL + `/messages?from=${lastIdMessage}`)
-    //   .then(r => r.json())
-    //   .then(r => {
-    //     setMessages([ ...r ]);
-    //     setLastIdMessage(r[r.length - 1].id);
-    //   });
-
     setInterval(() => {
-      // fetch(hostURL + `/messages?from=${lastIdMessage}`)
-      //   .then(r => r.json())
-      //   .then(r => {
-      //     setMessages([ ...r ]);
-      //     setLastIdMessage(r[r.length - 1].id);
-      //   });
       messageRcv();
     }, 3000);
   }, []);
