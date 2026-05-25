@@ -9,6 +9,23 @@ export default function Chat() {
   const [ messages, setMessages ] = useState([]);
   const hostURL = 'http://localhost:7075';
 
+  const messageRcv = async() => {
+    try {
+      const responseMessageRcv = await fetch(hostURL + `/messages?from=${lastIdMessage}`);
+      if (!responseMessageRcv.ok) {
+        throw new Error('Ошибка HTTP: ' + responseMessageRcv.status);
+      };
+      const dataMessageRcv = await responseMessageRcv.json();
+      setMessages([ ...dataMessageRcv ]);
+      if (dataMessageRcv.length === 0) {
+        return setLastIdMessage(0);
+      };
+      setLastIdMessage(dataMessageRcv[dataMessageRcv.length - 1].id);
+    } catch (error) {
+      console.error('Произошла ошибка:', error);
+    };
+  };
+
   useEffect(() => {
 
     (() => {
@@ -18,20 +35,21 @@ export default function Chat() {
         localStorage.setItem('userId', userId);
       }})();
 
-    fetch(hostURL + `/messages?from=${lastIdMessage}`)
-      .then(r => r.json())
-      .then(r => {
-        setMessages([ ...r ]);
-        setLastIdMessage(r[r.length - 1].id);
-      });
+    // fetch(hostURL + `/messages?from=${lastIdMessage}`)
+    //   .then(r => r.json())
+    //   .then(r => {
+    //     setMessages([ ...r ]);
+    //     setLastIdMessage(r[r.length - 1].id);
+    //   });
 
     setInterval(() => {
-      fetch(hostURL + `/messages?from=${lastIdMessage}`)
-        .then(r => r.json())
-        .then(r => {
-          setMessages([ ...r ]);
-          setLastIdMessage(r[r.length - 1].id);
-        });
+      // fetch(hostURL + `/messages?from=${lastIdMessage}`)
+      //   .then(r => r.json())
+      //   .then(r => {
+      //     setMessages([ ...r ]);
+      //     setLastIdMessage(r[r.length - 1].id);
+      //   });
+      messageRcv();
     }, 3000);
   }, []);
 

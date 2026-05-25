@@ -1,22 +1,30 @@
 import './InputMessage.css';
 import PropTypes from 'prop-types';
 
+const hostURL = 'http://localhost:7075';
+
 export default function InputMessage({ input, setInput, lastId, setLastId }) {
   const inputHandler = ({ target }) => {
     const { value } = target;
     setInput(value);
   };
 
-  const clickHandler = () => {
-    fetch('http://localhost:7075/messages', {
-      method: 'POST',
-      body: JSON.stringify({
-        id: lastId + 1,
-        userId: localStorage.id,
-        content: input,
-      }),
-    });
-
+  const clickHandler = async() => {
+    try {
+      const responseMessageSend = await fetch(hostURL + '/messages', {
+        method: 'POST',
+        body: JSON.stringify({
+          id: lastId + 1,
+          userId: localStorage.getItem('userId'),
+          content: input,
+        })
+      });
+      if (!responseMessageSend.ok) {
+        throw new Error('Ошибка HTTP: ' + responseMessageSend.status);
+      };
+    } catch (error) {
+      console.error('Произошла ошибка:', error);
+    };
     setLastId(prev => prev + 1);
     setInput('');
   };
